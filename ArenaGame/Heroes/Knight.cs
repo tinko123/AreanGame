@@ -20,8 +20,16 @@ namespace ArenaGame.Heroes
         public override double Attack()
         {
             double damage = base.Attack();
-            double realDamage = damage * damageCoef;
-            if (damageCoef < 1) damageCoef += 0.1;
+            double realDamage;
+            if (damage >=100)
+            {
+                realDamage = damage;
+            }
+            else
+            {
+                realDamage = damage * damageCoef;
+                if (damageCoef < 1) damageCoef += 0.1;
+            }
             return realDamage;
         }
 

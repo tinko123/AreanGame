@@ -20,7 +20,7 @@ namespace ArenaGame.Weapons
         {
             double coef = random.NextDouble();
             Name = name;
-            CriticalHitChance = 0.5;
+            CriticalHitChance = 0.1;
             if (coef <= CriticalHitChance)
             {
                 AttackDamage = 20 * 2;

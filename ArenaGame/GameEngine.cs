@@ -55,10 +55,25 @@ namespace ArenaGame
                         Damage = actualDamage
                     }); 
                 }
-
-                Hero tempHero = attacker;
-                attacker = defender;
-                defender = tempHero;
+                if(attacker.Weapon is Weapons.IceStaff)
+                {
+                    if (random.NextDouble() < 0.1)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Hero tempHero = attacker;
+                        attacker = defender;
+                        defender = tempHero;
+                    }
+                }
+                else
+                {
+                    Hero tempHero = attacker;
+                    attacker = defender;
+                    defender = tempHero;
+                }
             }
             Winner = defender;
         }
